@@ -51,6 +51,10 @@ export default function AuthShell({
                 <i className="ri-links-line text-lg text-(--accent)" />
                 Source-backed answers for better confidence
               </li>
+              <li className="flex items-center gap-3">
+                <i className="ri-shield-user-line text-lg text-(--accent)" />
+                Build by Aditya Gupta
+              </li>
             </ul>
           </div>
         </aside>
