@@ -1,16 +1,71 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "perplexity",
   "version": "1.0.0",
-  "description": "",
+  "description": "Perplexity by Aditya: Express.js backend with auth, email verification, JWT, MongoDB, and AI-ready service architecture.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "echo \"TODO: add automated tests\"",
+    "lint": "echo \"TODO: add ESLint config\"",
+    "format": "echo \"TODO: add Prettier config\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "aditya",
+    "perplexity",
+    "express",
+    "nodejs",
+    "mongodb",
+    "authentication",
+    "jwt",
+    "email-verification",
+    "langchain",
+    "groq",
+    "ai-backend"
+  ],
+  "author": {
+    "name": "Aditya Kumar Gupta",
+    "email": "hello@devaditya.dev",
+    "url": "https://devaditya.dev"
+  },
+  "contributors": [
+    {
+      "name": "Aditya Gupta",
+      "url": "https://github.com/dev-aditya-lab"
+    }
+  ],
   "license": "ISC",
   "type": "module",
+  "homepage": "https://github.com/dev-aditya-lab/perplexity-by-aditya#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-aditya-lab/perplexity-by-aditya.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dev-aditya-lab/perplexity-by-aditya/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "config": {
+    "projectMeta": {
+      "ownerWebsite": "https://devaditya.dev",
+      "githubProfile": "https://github.com/dev-aditya-lab",
+      "linkedin": "https://www.linkedin.com/in/aditya-gupta9608/",
+      "twitter": "https://x.com/dev_aditya_x",
+      "portfolio": "https://devaditya.dev",
+      "status": "active",
+      "placeholders": {
+        "frontendAppUrl": "TODO: add frontend app URL",
+        "apiDocsUrl": "TODO: add API docs URL",
+        "roadmapUrl": "TODO: add roadmap URL",
+        "changelogUrl": "TODO: add changelog URL",
+        "liveDemoUrl": "TODO: add live demo URL"
+      }
+    }
+  },
   "dependencies": {
     "@langchain/core": "^1.1.40",
     "@langchain/groq": "^1.2.0",
