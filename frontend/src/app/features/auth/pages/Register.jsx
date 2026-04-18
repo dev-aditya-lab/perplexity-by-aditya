@@ -1,5 +1,7 @@
 import React from "react";
 import AuthShell from "../components/AuthShell";
+import GoogleAuthBtn from "../components/GoogleAuthBtn";
+import GithubAuthBtn from "../components/GithubAuthBtn";
 
 export default function Register() {
   return (
@@ -11,21 +13,8 @@ export default function Register() {
       helperLabel="Sign in"
     >
       <div className="space-y-4">
-        <button
-          type="button"
-          className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-[var(--chip-border)] bg-[var(--surface-soft)] px-4 py-3 text-sm font-semibold text-[var(--ink-secondary)] transition hover:-translate-y-0.5 hover:border-[#DB4437]/40 hover:text-[#DB4437]"
-        >
-          <i className="ri-google-fill text-base" />
-          Continue with Google
-        </button>
-
-        <button
-          type="button"
-          className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-[var(--chip-border)] bg-[var(--surface-soft)] px-4 py-3 text-sm font-semibold text-[var(--ink-secondary)] transition hover:-translate-y-0.5 hover:border-[#1F2937]/30 hover:text-[#111827]"
-        >
-          <i className="ri-github-fill text-base" />
-          Continue with GitHub
-        </button>
+            <GoogleAuthBtn/>
+            <GithubAuthBtn/>
       </div>
 
       <div className="my-6 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-[var(--ink-muted)]">
