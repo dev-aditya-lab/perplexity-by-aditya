@@ -23,8 +23,7 @@ authRouter.get("/verify-email", verifyEmailController);
 /**
  * @Api {Post} /api/auth/login
  * @Description Login a user
- * @Body {String} email - The email of the user
- * @Body {String} username - The username of the user
+ * @Body {string} -> {email or username} - The email or username of the user
  * @Body {String} password - The password of the user
  */
 authRouter.post("/login", loginValidator, loginController);

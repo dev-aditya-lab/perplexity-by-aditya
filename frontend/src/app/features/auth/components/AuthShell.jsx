@@ -1,0 +1,107 @@
+import React from "react";
+import { Link } from "react-router";
+
+const logoUrl =
+  "https://framerusercontent.com/images/gcMkPKyj2RX8EOEja8A1GWvCb7E.jpg?width=5000&height=5000";
+
+export default function AuthShell({
+  title,
+  subtitle,
+  helperText,
+  helperLink,
+  helperLabel,
+  children,
+}) {
+  return (
+    <main className="relative isolate min-h-screen overflow-hidden bg-[var(--page-bg)] text-[var(--ink-primary)]">
+      <div className="pointer-events-none absolute -left-16 top-10 h-52 w-52 rounded-full bg-[var(--accent-soft)] blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 top-1/2 h-64 w-64 rounded-full bg-[var(--brand-soft)] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-1/3 h-44 w-44 rounded-full bg-[var(--surface-soft)] blur-3xl" />
+
+      <section className="mx-auto grid min-h-screen w-full max-w-6xl grid-cols-1 px-4 py-8 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:px-8">
+        <aside className="relative hidden items-center lg:flex">
+          <div className="space-y-8 rounded-[2rem] border border-[var(--card-border)] bg-[var(--card-bg)] p-10 shadow-[0_30px_80px_-35px_rgba(16,24,40,0.35)] backdrop-blur-md">
+            <div className="inline-flex items-center gap-3 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-4 py-2 text-sm font-semibold text-[var(--ink-secondary)]">
+              <i className="ri-sparkling-2-line text-[var(--accent)]" />
+              AI Knowledge Assistant
+            </div>
+
+            <div className="space-y-4">
+              <h1 className="font-display text-5xl leading-tight tracking-tight text-[var(--ink-primary)]">
+                Ask faster.
+                <br />
+                Think deeper.
+              </h1>
+              <p className="max-w-md text-base leading-7 text-[var(--ink-muted)]">
+                Perplexity-inspired workspace for focused answers, trusted sources, and
+                clean conversations.
+              </p>
+            </div>
+
+            <ul className="space-y-4 text-sm text-[var(--ink-secondary)]">
+              <li className="flex items-center gap-3">
+                <i className="ri-shield-check-line text-lg text-[var(--accent)]" />
+                Enterprise-grade account security and privacy
+              </li>
+              <li className="flex items-center gap-3">
+                <i className="ri-flashlight-line text-lg text-[var(--accent)]" />
+                Smart retrieval with contextual AI responses
+              </li>
+              <li className="flex items-center gap-3">
+                <i className="ri-links-line text-lg text-[var(--accent)]" />
+                Source-backed answers for better confidence
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <div className="flex items-center justify-center py-4 lg:py-8">
+          <article className="w-full max-w-lg animate-rise rounded-[2rem] border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-[0_30px_90px_-40px_rgba(16,24,40,0.45)] sm:p-8">
+            <div className="mb-8 flex items-center justify-between">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--chip-border)] bg-[var(--chip-bg)] px-3 py-1.5 text-xs font-semibold tracking-[0.08em] text-[var(--ink-secondary)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                <i className="ri-arrow-left-line" />
+                BACK
+              </Link>
+
+              <div className="inline-flex items-center gap-3">
+                <img
+                  src={logoUrl}
+                  alt="Perplexity Logo"
+                  className="h-10  rounded-xl object-cover ring-2 ring-[var(--chip-border)]"
+                />
+                <div>
+                  <p className="font-display text-base leading-none text-[var(--ink-primary)]">
+                    Perplexity
+                  </p>
+                  <p className="text-xs text-[var(--ink-muted)]">Intelligent answers</p>
+                </div>
+              </div>
+            </div>
+
+            <header className="mb-6 space-y-2">
+              <h2 className="font-display text-3xl leading-tight text-[var(--ink-primary)]">
+                {title}
+              </h2>
+              <p className="text-sm text-[var(--ink-muted)]">{subtitle}</p>
+            </header>
+
+            {children}
+
+            <p className="mt-6 text-center text-sm text-[var(--ink-muted)]">
+              {helperText}{" "}
+              <Link
+                to={helperLink}
+                className="font-semibold text-[var(--accent)] transition hover:text-[var(--accent-strong)]"
+              >
+                {helperLabel}
+              </Link>
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+  );
+}
