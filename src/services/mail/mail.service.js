@@ -1,39 +1,18 @@
-import nodemailer from 'nodemailer';
 
-export const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    type: 'OAuth2',
-    user: process.env.GOOGLE_EMAIL_USER,
-    clientId: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
-  },
-});
+import { Resend } from 'resend';
 
-// Verify the connection configuration
-transporter.verify((error, success) => {
-  if (error) {
-    console.error('Error connecting to email server:', error);
-  } else {
-    console.log('Email server is ready to send messages');
-  }
-});
+const resend = new Resend(process.env.RESEND_MAIL_API_KEY);
 
-// Function to send email
-export const sendEmail = async (to, subject, text, html) => {
-  try {
-    const info = await transporter.sendMail({
-      from: `"Perplexity by Aditya" <${process.env.GOOGLE_EMAIL_USER}>`, // sender address
-      to, // list of receivers
-      subject, // Subject line
-      text, // plain text body
-      html, // html body
-    });
-
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-  } catch (error) {
-    console.error('Error sending email:', error);
-  }
-};
+export const sendEmail = async (to, subject,text, html) => {
+    try {
+        const data = await resend.emails.send({
+            from: "Perplexity by Adity <perplexity@devaditya.dev>",
+            to,
+            subject,
+            html,
+        });
+        console.log("Email sent successfully:", text);
+    } catch (error) {
+        console.error("Error sending email:", error);
+    }
+}
