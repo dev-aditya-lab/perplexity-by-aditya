@@ -17,10 +17,10 @@ export default function Register() {
         <GoogleAuthBtn />
         <GithubAuthBtn />
       </div>
-      <div className="my-6 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-[var(--ink-muted)]">
-        <span className="h-px flex-1 bg-[var(--chip-border)]" />
+      <div className="my-6 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-(--ink-muted)">
+        <span className="h-px flex-1 bg-(--chip-border)" />
         or
-        <span className="h-px flex-1 bg-[var(--chip-border)]" />
+        <span className="h-px flex-1 bg-(--chip-border)" />
       </div>
 
       <form className="space-y-4">
@@ -28,8 +28,8 @@ export default function Register() {
         <FormGroup label="Email" icon="ri-at-line" type="email" placeholder="you@company.com" />
         <FormGroup label="Password" icon="ri-lock-password-line" type="password" placeholder="Create a strong password" />
         
-        <label className="inline-flex items-start gap-2 text-sm text-[var(--ink-secondary)]">
-          <input type="checkbox" className="mt-0.5 h-4 w-4 accent-[var(--accent)]" />
+        <label className="inline-flex items-start gap-2 text-sm text-(--ink-secondary)">
+          <input type="checkbox" className="mt-0.5 h-4 w-4 accent-(--accent)" />
           <span>
             I agree to the terms and privacy policy.
           </span>
@@ -37,7 +37,7 @@ export default function Register() {
 
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[var(--accent-strong)]"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-(--accent) px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
         >
           <i className="ri-user-add-line text-base" />
           Create account
