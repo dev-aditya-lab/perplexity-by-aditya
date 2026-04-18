@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import AuthShell from "../components/AuthShell";
 import GoogleAuthBtn from "../components/GoogleAuthBtn";
 import GithubAuthBtn from "../components/GithubAuthBtn";
+import FormGroup from "../components/FormGroup";
 
 export default function Login() {
   return (
@@ -25,43 +26,9 @@ export default function Login() {
       </div>
 
       <form className="space-y-4">
-        <label className="block">
-          <span className="mb-2 inline-flex items-center gap-2 text-sm font-medium text-[var(--ink-secondary)]">
-            <i className="ri-user-3-line text-[var(--accent)]" />
-            Email or username
-          </span>
-          <div className="group flex items-center rounded-xl border border-[var(--chip-border)] bg-[var(--surface-soft)] px-3 transition focus-within:border-[var(--accent)]">
-            <i className="ri-at-line text-[var(--ink-muted)] group-focus-within:text-[var(--accent)]" />
-            <input
-              type="text"
-              placeholder="Enter email or username"
-              className="w-full bg-transparent px-3 py-3 text-sm text-[var(--ink-primary)] outline-none placeholder:text-[var(--ink-muted)]"
-            />
-          </div>
-        </label>
-
-        <label className="block">
-          <span className="mb-2 inline-flex items-center gap-2 text-sm font-medium text-[var(--ink-secondary)]">
-            <i className="ri-lock-password-line text-[var(--accent)]" />
-            Password
-          </span>
-          <div className="group flex items-center rounded-xl border border-[var(--chip-border)] bg-[var(--surface-soft)] px-3 transition focus-within:border-[var(--accent)]">
-            <i className="ri-key-2-line text-[var(--ink-muted)] group-focus-within:text-[var(--accent)]" />
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="w-full bg-transparent px-3 py-3 text-sm text-[var(--ink-primary)] outline-none placeholder:text-[var(--ink-muted)]"
-            />
-            <button
-              type="button"
-              aria-label="Toggle password visibility"
-              className="text-[var(--ink-muted)] transition hover:text-[var(--accent)]"
-            >
-              <i className="ri-eye-line" />
-            </button>
-          </div>
-        </label>
-
+              <FormGroup label="Email or username" icon="ri-at-line"  placeholder="Enter email or username" />
+              <FormGroup label="Password" icon="ri-lock-password-line" type="password" placeholder="Enter your password" />
+              
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
           <label className="inline-flex items-center gap-2 text-[var(--ink-secondary)]">
             <input type="checkbox" className="h-4 w-4 accent-[var(--accent)]" />

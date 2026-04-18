@@ -2,6 +2,7 @@ import React from "react";
 import AuthShell from "../components/AuthShell";
 import GoogleAuthBtn from "../components/GoogleAuthBtn";
 import GithubAuthBtn from "../components/GithubAuthBtn";
+import FormGroup from "../components/FormGroup";
 
 export default function Register() {
   return (
@@ -13,10 +14,9 @@ export default function Register() {
       helperLabel="Sign in"
     >
       <div className="space-y-4">
-            <GoogleAuthBtn/>
-            <GithubAuthBtn/>
+        <GoogleAuthBtn />
+        <GithubAuthBtn />
       </div>
-
       <div className="my-6 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-[var(--ink-muted)]">
         <span className="h-px flex-1 bg-[var(--chip-border)]" />
         or
@@ -24,58 +24,10 @@ export default function Register() {
       </div>
 
       <form className="space-y-4">
-        <label className="block">
-          <span className="mb-2 inline-flex items-center gap-2 text-sm font-medium text-[var(--ink-secondary)]">
-            <i className="ri-user-smile-line text-[var(--accent)]" />
-            Username
-          </span>
-          <div className="group flex items-center rounded-xl border border-[var(--chip-border)] bg-[var(--surface-soft)] px-3 transition focus-within:border-[var(--accent)]">
-            <i className="ri-user-line text-[var(--ink-muted)] group-focus-within:text-[var(--accent)]" />
-            <input
-              type="text"
-              placeholder="Choose a username"
-              className="w-full bg-transparent px-3 py-3 text-sm text-[var(--ink-primary)] outline-none placeholder:text-[var(--ink-muted)]"
-            />
-          </div>
-        </label>
-
-        <label className="block">
-          <span className="mb-2 inline-flex items-center gap-2 text-sm font-medium text-[var(--ink-secondary)]">
-            <i className="ri-mail-line text-[var(--accent)]" />
-            Email
-          </span>
-          <div className="group flex items-center rounded-xl border border-[var(--chip-border)] bg-[var(--surface-soft)] px-3 transition focus-within:border-[var(--accent)]">
-            <i className="ri-at-line text-[var(--ink-muted)] group-focus-within:text-[var(--accent)]" />
-            <input
-              type="email"
-              placeholder="you@company.com"
-              className="w-full bg-transparent px-3 py-3 text-sm text-[var(--ink-primary)] outline-none placeholder:text-[var(--ink-muted)]"
-            />
-          </div>
-        </label>
-
-        <label className="block">
-          <span className="mb-2 inline-flex items-center gap-2 text-sm font-medium text-[var(--ink-secondary)]">
-            <i className="ri-lock-password-line text-[var(--accent)]" />
-            Password
-          </span>
-          <div className="group flex items-center rounded-xl border border-[var(--chip-border)] bg-[var(--surface-soft)] px-3 transition focus-within:border-[var(--accent)]">
-            <i className="ri-key-2-line text-[var(--ink-muted)] group-focus-within:text-[var(--accent)]" />
-            <input
-              type="password"
-              placeholder="Create a strong password"
-              className="w-full bg-transparent px-3 py-3 text-sm text-[var(--ink-primary)] outline-none placeholder:text-[var(--ink-muted)]"
-            />
-            <button
-              type="button"
-              aria-label="Toggle password visibility"
-              className="text-[var(--ink-muted)] transition hover:text-[var(--accent)]"
-            >
-              <i className="ri-eye-line" />
-            </button>
-          </div>
-        </label>
-
+        <FormGroup label="Username" icon="ri-user-line" placeholder="Choose a username" />
+        <FormGroup label="Email" icon="ri-at-line" type="email" placeholder="you@company.com" />
+        <FormGroup label="Password" icon="ri-lock-password-line" type="password" placeholder="Create a strong password" />
+        
         <label className="inline-flex items-start gap-2 text-sm text-[var(--ink-secondary)]">
           <input type="checkbox" className="mt-0.5 h-4 w-4 accent-[var(--accent)]" />
           <span>
