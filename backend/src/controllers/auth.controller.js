@@ -4,6 +4,7 @@ import { emailAlreadyVerifiedTemplate, emailVerificationTemplate, emailVerifiedT
 import { accountLoginMailTemplate } from "../utils/mailTemplates/accountLoginMailTemplate.js";
 
 import jwt from "jsonwebtoken";
+import { generateOTP } from "../utils/OtpSystem/generateOTP.js";
 
 
 export async function registerController(req, res) {
@@ -171,6 +172,66 @@ export const getMeController = async (req, res) => {
     });
 }
 
+export const forgetPasswordByEmailOtpController = async (req, res) => {
+    const { email } = req.body;
+    const user = await userModel.findOne({ email });
+    if (!user) {
+        return res.status(404).json({
+            success: false,
+            message: "User not found with this email",
+            err: "User not found with this email"
+        });
+    }
+    const otp = generateOTP();
+    await redisClient.set(`forgetPasswordOTP:${user._id}`, otp, "EX", 600); // set otp in redis with 10 minutes expiry 600sec
+
+    await sendEmail(
+        user.email,
+        "Password Reset OTP",
+        `Hello ${user.username},\n\nYou requested a password reset. Use the following OTP to reset your password: ${otp}\n\nThis OTP is valid for 10 minutes.\n\nIf you did not request a password reset, please ignore this email.\n\nBest regards,\nThe Perplexity Team`,
+        forgetPasswordOTPTemplate(otp)
+    )
+
+    res.status(200).json({
+        success: true,
+        message: "Password reset OTP sent to email",
+    });
+}
+
+export const verifyForgetPasswordOtpController = async (req, res) => {
+    const email = req.params.email;
+    const { otp } = req.body;
+    const user = await userModel.findOne({ email });
+    if (!user) {
+        return res.status(404).json({
+            success: false,
+            message: "User not found with this email",
+            err: "User not found with this email"
+        });
+    }
+    const storedOtp = await redisClient.get(`forgetPasswordOTP:${user._id}`);
+    if (!storedOtp) {
+        return res.status(400).json({
+            success: false,
+            message: "OTP expired or not found. Please request a new one.",
+            err: "OTP expired or not found. Please request a new one."
+        });
+    }
+    if (storedOtp !== otp) {
+        return res.status(400).json({
+            success: false,
+            message: "Invalid OTP. Please try again.",
+            err: "Invalid OTP. Please try again."
+        });
+    }
+    // OTP is valid, allow user to reset password
+    res.status(200).json({
+        success: true,
+        message: "OTP verified successfully. You can now reset your password.",
+    });
+    
+}
+
 export const chnagePasswordController = async (req, res) => {
     const userId = req.user.userId;
     const { oldPassword, newPassword } = req.body;
@@ -190,10 +251,18 @@ export const chnagePasswordController = async (req, res) => {
             err: "Invalid old password"
         });
     }
-    user.password = newPassword;
-    await user.save();
+    await userModel.findByIdAndUpdate(userId, { password: newPassword })
+
     res.status(200).json({
         success: true,
         message: "Password changed successfully",
     });
 }
+
+export const logoutController = async (req, res) => {
+    res.clearCookie("token");
+    res.status(200).json({
+        success: true,
+        message: "Logout successful",
+    });
+}   
