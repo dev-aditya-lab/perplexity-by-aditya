@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getMeController, loginController, registerController, verifyEmailController } from "../controllers/auth.controller.js";
+import { forgetPasswordByEmailOtpController, verifyForgetPasswordOtpController,getMeController, loginController, registerController, verifyEmailController, } from "../controllers/auth.controller.js";
 import { loginValidator, registerValidator } from "../validators/auth.validator.js";
 import { authMiddleware } from "../middleware/auth.middleware.js";
 const authRouter = Router();
@@ -34,5 +34,21 @@ authRouter.post("/login", loginValidator, loginController);
  * @Header {String} Authorization - The JWT token of the logged in user
  */
 authRouter.get("/getMe",authMiddleware, getMeController);
+
+/**
+ * @Api {Post} /api/auth/forget-password
+ * @Description Send OTP to user's email for password reset
+ * @Body {String} email - The email of the user who forgot their password
+ */
+authRouter.post("/forget-password", forgetPasswordByEmailOtpController);
+
+/**
+ * @Api {Post} /api/auth/verify-forget-password-otp
+ * @Description Verify the OTP sent to user's email for password reset
+ * @Param {params} email - The email of the user who forgot their password
+ * @Body {String} otp - The OTP sent to user's email for password reset
+ */
+authRouter.post("/verify-forget-password-otp/:email", verifyForgetPasswordOtpController);
+
 
 export default authRouter;
