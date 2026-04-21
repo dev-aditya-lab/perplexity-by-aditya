@@ -1,7 +1,7 @@
 import userModel from "../models/user.model.js";
 import { sendEmail } from "../services/mail/mail.service.js";
 import { emailAlreadyVerifiedTemplate, emailVerificationTemplate, emailVerifiedTemplate } from "../utils/mailTemplates/emailVerifyHTMLtemplate.js";
-import { accountLoginMailTemplate} from "../utils/mailTemplates/accountLoginMailTemplate.js";
+import { accountLoginMailTemplate } from "../utils/mailTemplates/accountLoginMailTemplate.js";
 
 import jwt from "jsonwebtoken";
 
@@ -53,7 +53,7 @@ export async function registerController(req, res) {
 
 export const verifyEmailController = async (req, res) => {
     const { token } = req.query;
-    try{
+    try {
         if (!token) {
             return res.status(400).json({
                 success: false,
@@ -61,7 +61,7 @@ export const verifyEmailController = async (req, res) => {
                 err: "Verification token is required"
             });
         }
-    }catch(error){
+    } catch (error) {
         console.error("Error verifying email:", error);
         return res.status(400).json({
             success: false,
@@ -112,7 +112,7 @@ export const loginController = async (req, res) => {
         "New Login Alert",
         `Hello ${user.username},\n\nWe noticed a new login to your account. If this was you, you can safely ignore this email. If you did not log in, please secure your account immediately by changing your password .\n\nBest regards,\nThe Perplexity Team`,
         accountLoginMailTemplate(user.username)
-        
+
     )
     if (!user) {
         return res.status(404).json({
@@ -168,5 +168,32 @@ export const getMeController = async (req, res) => {
         success: true,
         message: "User get successfully",
         user
+    });
+}
+
+export const chnagePasswordController = async (req, res) => {
+    const userId = req.user.userId;
+    const { oldPassword, newPassword } = req.body;
+    const user = await userModel.findById(userId).select("+password");
+    if (!user) {
+        return res.status(404).json({
+            success: false,
+            message: "User not found",
+            err: "User not found"
+        });
+    }
+    const isPasswordValid = await user.comparePassword(oldPassword);
+    if (!isPasswordValid) {
+        return res.status(401).json({
+            success: false,
+            message: "Invalid old password",
+            err: "Invalid old password"
+        });
+    }
+    user.password = newPassword;
+    await user.save();
+    res.status(200).json({
+        success: true,
+        message: "Password changed successfully",
     });
 }
