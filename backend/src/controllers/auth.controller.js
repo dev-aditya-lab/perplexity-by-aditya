@@ -224,6 +224,8 @@ export const verifyForgetPasswordOtpController = async (req, res) => {
             err: "Invalid OTP. Please try again."
         });
     }
+    // delete storedOtp; // OTP is valid, delete it from redis
+    await redisClient.del(`forgetPasswordOTP:${user._id}`);
     // OTP is valid, allow user to reset password
     res.status(200).json({
         success: true,
