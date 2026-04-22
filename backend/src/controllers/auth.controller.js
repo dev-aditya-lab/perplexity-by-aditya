@@ -116,6 +116,9 @@ export const loginController = async (req, res) => {
         });
     }
 
+    const removeUserPasswrodForResponse = user.toObject();
+    delete removeUserPasswrodForResponse.password;
+
     const isPasswordValid = await user.comparePassword(password);
     if (!isPasswordValid) {
         return res.status(401).json({
@@ -148,12 +151,7 @@ export const loginController = async (req, res) => {
     res.status(200).json({
         success: true,
         message: "Login successful",
-        user: {
-            id: user._id,
-            username: user.username,
-            email: user.email,
-        }
-
+        user: removeUserPasswrodForResponse
     });
 }
 
