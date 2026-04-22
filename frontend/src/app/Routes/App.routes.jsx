@@ -5,7 +5,7 @@ import Register from "../features/auth/pages/Register";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Navigate to="/login" replace />,
+        element: <h1>Home Page</h1>,
     },
     {
         path: "/login",

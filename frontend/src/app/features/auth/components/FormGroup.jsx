@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function FormGroup({ label, icon = "ri-user-line", type = "text", placeholder }) {
+export default function FormGroup({ label, icon = "ri-user-line", type = "text", placeholder, name,onChange }) {
+    const [showPassword, setShowPassword] = React.useState(false);
+
     return (
         <div>
             <label className="block">
@@ -11,8 +13,10 @@ export default function FormGroup({ label, icon = "ri-user-line", type = "text",
                 <div className="group flex items-center rounded-xl border border-(--chip-border) bg-(--surface-soft) px-3 transition focus-within:border-(--accent)">
                     <i className={`${icon} text-(--ink-muted) group-focus-within:text-(--accent)`} />
                     <input
-                        type={type}
+                        name={name}
+                        type={type === "password" ? (showPassword ? "text" : "password") : type}
                         placeholder={placeholder}
+                        onChange={onChange}
                         className="w-full bg-transparent px-3 py-3 text-sm text-(--ink-primary) outline-none placeholder:text-(--ink-muted)"
                     />
                     {
@@ -21,8 +25,9 @@ export default function FormGroup({ label, icon = "ri-user-line", type = "text",
                                 type="button"
                                 aria-label="Toggle password visibility"
                                 className="text-(--ink-muted) transition hover:text-(--accent)"
+                                onClick={() => setShowPassword(!showPassword)}
                             >
-                                <i className="ri-eye-line" />
+                                <i className={showPassword ? "ri-eye-line" : "ri-eye-off-line"} />
                             </button>
                         )
                     }

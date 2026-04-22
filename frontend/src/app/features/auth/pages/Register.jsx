@@ -5,6 +5,10 @@ import GithubAuthBtn from "../components/GithubAuthBtn";
 import FormGroup from "../components/FormGroup";
 
 export default function Register() {
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+  };
   return (
     <AuthShell
       title="Create your account"
@@ -23,7 +27,7 @@ export default function Register() {
         <span className="h-px flex-1 bg-(--chip-border)" />
       </div>
 
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleRegisterSubmit}>
         <FormGroup label="Username" icon="ri-user-line" placeholder="Choose a username" />
         <FormGroup label="Email" icon="ri-at-line" type="email" placeholder="you@company.com" />
         <FormGroup label="Password" icon="ri-lock-password-line" type="password" placeholder="Create a strong password" />

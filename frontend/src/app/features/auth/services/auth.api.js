@@ -16,9 +16,9 @@ export const registerUser = async ({ username, email, password }) => {
     }
 }
 
-export const loginUser = async ({ email, password }) => {
+export const loginUser = async ({ emailOrUsername, password }) => {
     try {
-        const response = await api.post('/api/auth/login', { email, password });
+        const response = await api.post('/api/auth/login', { emailOrUsername, password });
         return response.data;
     } catch (error) {
         throw error.response ? error.response.data : new Error('Network Error');

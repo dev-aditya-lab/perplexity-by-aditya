@@ -103,18 +103,11 @@ export const verifyEmailController = async (req, res) => {
 }
 
 export const loginController = async (req, res) => {
-    const { email, username, password } = req.body;
+    const { emailOrUsername, password } = req.body;
     const user = await userModel.findOne({
-        $or: [{ email }, { username }]
+        $or: [{ email: emailOrUsername }, { username: emailOrUsername }]
     }).select("+password");
 
-    await sendEmail(
-        user.email,
-        "New Login Alert",
-        `Hello ${user.username},\n\nWe noticed a new login to your account. If this was you, you can safely ignore this email. If you did not log in, please secure your account immediately by changing your password .\n\nBest regards,\nThe Perplexity Team`,
-        accountLoginMailTemplate(user.username)
-
-    )
     if (!user) {
         return res.status(404).json({
             success: false,
@@ -122,6 +115,7 @@ export const loginController = async (req, res) => {
             err: "User not found with this email or username"
         });
     }
+
     const isPasswordValid = await user.comparePassword(password);
     if (!isPasswordValid) {
         return res.status(401).json({
@@ -143,6 +137,14 @@ export const loginController = async (req, res) => {
         { expiresIn: "7d" }
     );
     res.cookie("token", token)
+
+    await sendEmail(
+        user.email,
+        "New Login Alert",
+        `Hello ${user.username},\n\nWe noticed a new login to your account. If this was you, you can safely ignore this email. If you did not log in, please secure your account immediately by changing your password .\n\nBest regards,\nThe Perplexity Team`,
+        accountLoginMailTemplate(user.username)
+    )
+
     res.status(200).json({
         success: true,
         message: "Login successful",
