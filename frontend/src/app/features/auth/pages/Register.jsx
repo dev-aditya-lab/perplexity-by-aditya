@@ -9,11 +9,11 @@ import { useNavigate } from "react-router";
 import Loading from "../../../components/Loading";
 
 export default function Register() {
+    const {user,loading} = useSelector((state) => state.auth);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { handleRegisterUser } = useAuth();
-  const loading = useSelector((state) => state.auth.loading);
   const navigate = useNavigate();
 
   const handleRegisterSubmit = async(e) => {
@@ -25,6 +25,9 @@ export default function Register() {
       console.error("Registration failed:", error);
     }
   };
+  if(!loading && user){
+    return <Navigate to="/" replace />
+  }
   return (
     <AuthShell
       title="Create your account"

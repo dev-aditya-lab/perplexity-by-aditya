@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import AuthShell from "../components/AuthShell";
 import GoogleAuthBtn from "../components/GoogleAuthBtn";
@@ -10,7 +10,7 @@ import Loading from "../../../components/Loading";
 
 export default function Login() {
   const { handleLoginUser } = useAuth();
-  const loading = useSelector((state) => state.auth.loading);
+  const {user,loading} = useSelector((state) => state.auth);
   const navigate = useNavigate();
 const [emailOrUsername, setEmailOrUsername] = useState(""); 
 const [password, setPassword] = useState("");
@@ -24,6 +24,10 @@ const [password, setPassword] = useState("");
       console.error("Login failed:", error);
     }
   };
+
+  if(!loading && user){
+    return <Navigate to="/" replace />
+  }
   return (
     <AuthShell
       title="Welcome back"
