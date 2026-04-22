@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import AuthShell from "../components/AuthShell";
 import GoogleAuthBtn from "../components/GoogleAuthBtn";
 import GithubAuthBtn from "../components/GithubAuthBtn";
 import FormGroup from "../components/FormGroup";
+import { useAuth } from "../hook/useAuth";
+import { useNavigate } from "react-router";
 
 export default function Register() {
-  const handleRegisterSubmit = (e) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { handleRegisterUser } = useAuth();
+  const navigate = useNavigate();
+
+  const handleRegisterSubmit = async(e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    try {
+      await handleRegisterUser({ username, email, password });
+      navigate("/login");
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
   };
   return (
     <AuthShell
@@ -28,12 +41,12 @@ export default function Register() {
       </div>
 
       <form className="space-y-4" onSubmit={handleRegisterSubmit}>
-        <FormGroup label="Username" icon="ri-user-line" placeholder="Choose a username" />
-        <FormGroup label="Email" icon="ri-at-line" type="email" placeholder="you@company.com" />
-        <FormGroup label="Password" icon="ri-lock-password-line" type="password" placeholder="Create a strong password" />
+        <FormGroup onChange={(e)=>setUsername(e.target.value)} label="Username" icon="ri-user-line" placeholder="Choose a username" />
+        <FormGroup onChange={(e)=>setEmail(e.target.value)} label="Email" icon="ri-at-line" type="email" placeholder="you@company.com" />
+        <FormGroup onChange={(e)=>setPassword(e.target.value)} label="Password" icon="ri-lock-password-line" type="password" placeholder="Create a strong password" />
         
         <label className="inline-flex items-start gap-2 text-sm text-(--ink-secondary)">
-          <input type="checkbox" className="mt-0.5 h-4 w-4 accent-(--accent)" />
+          <input required type="checkbox" className="mt-0.5 h-4 w-4 accent-(--accent)" />
           <span>
             I agree to the terms and privacy policy.
           </span>

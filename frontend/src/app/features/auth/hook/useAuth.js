@@ -11,6 +11,7 @@ export const useAuth = () => {
             await registerUser({ username, email, password });
         } catch (error) {
             dispatch(setError(error.message || 'Registration failed'));
+            throw error;
         } finally {
             dispatch(setLoading(false));
         }
@@ -37,6 +38,7 @@ export const useAuth = () => {
             dispatch(setUser(userData));
         } catch (error) {
             dispatch(setError(error.message || 'Failed to fetch user data'));
+            throw error;
         }finally {
             dispatch(setLoading(false));
         }
