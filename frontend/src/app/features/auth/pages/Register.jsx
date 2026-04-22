@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import AuthShell from "../components/AuthShell";
 import GoogleAuthBtn from "../components/GoogleAuthBtn";
 import GithubAuthBtn from "../components/GithubAuthBtn";
 import FormGroup from "../components/FormGroup";
 import { useAuth } from "../hook/useAuth";
 import { useNavigate } from "react-router";
+import Loading from "../../../components/Loading";
 
 export default function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { handleRegisterUser } = useAuth();
+  const loading = useSelector((state) => state.auth.loading);
   const navigate = useNavigate();
 
   const handleRegisterSubmit = async(e) => {
@@ -54,11 +57,23 @@ export default function Register() {
 
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-(--accent) px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
+          disabled={loading}
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-(--accent) px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-(--accent-strong) disabled:cursor-not-allowed disabled:opacity-85 disabled:hover:translate-y-0 disabled:hover:bg-(--accent)"
         >
-          <i className="ri-user-add-line text-base" />
-          Create account
+          {loading ? (
+            <>
+              <i className="ri-loader-4-line animate-spin text-base" />
+              Creating your account...
+            </>
+          ) : (
+            <>
+              <i className="ri-user-add-line text-base" />
+              Create account
+            </>
+          )}
         </button>
+
+        {loading && <Loading label="Creating your secure workspace..." />}
       </form>
     </AuthShell>
   );

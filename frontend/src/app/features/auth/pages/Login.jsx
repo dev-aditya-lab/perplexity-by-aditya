@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 import AuthShell from "../components/AuthShell";
 import GoogleAuthBtn from "../components/GoogleAuthBtn";
 import GithubAuthBtn from "../components/GithubAuthBtn";
 import FormGroup from "../components/FormGroup";
 import { useAuth } from "../hook/useAuth";
+import Loading from "../../../components/Loading";
 
 export default function Login() {
   const { handleLoginUser } = useAuth();
+  const loading = useSelector((state) => state.auth.loading);
   const navigate = useNavigate();
 const [emailOrUsername, setEmailOrUsername] = useState(""); 
 const [password, setPassword] = useState("");
@@ -56,11 +59,23 @@ const [password, setPassword] = useState("");
 
         <button
           type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-(--accent) px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-(--accent-strong)"
+          disabled={loading}
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-(--accent) px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-(--accent-strong) disabled:cursor-not-allowed disabled:opacity-85 disabled:hover:translate-y-0 disabled:hover:bg-(--accent)"
         >
-          <i className="ri-login-box-line text-base" />
-          Sign in to dashboard
+          {loading ? (
+            <>
+              <i className="ri-loader-4-line animate-spin text-base" />
+              Signing in...
+            </>
+          ) : (
+            <>
+              <i className="ri-login-box-line text-base" />
+              Sign in to dashboard
+            </>
+          )}
         </button>
+
+        {loading && <Loading label="Authenticating your account..." />}
       </form>
     </AuthShell>
   );

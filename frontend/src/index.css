@@ -54,3 +54,13 @@ body {
 		transform: translateY(0) scale(1);
 	}
 }
+
+@keyframes shine {
+	from {
+		transform: translateX(-120%);
+	}
+
+	to {
+		transform: translateX(120%);
+	}
+}
