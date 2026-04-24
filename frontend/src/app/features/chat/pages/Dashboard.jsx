@@ -1,11 +1,18 @@
-import React, {  } from 'react'
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useChat } from '../hooks/useChat.js';
 
-export default function Dashboard() {
-    const {user}= useSelector((state) => state.auth);
-    console.log(user)
-
+function Dashboard() {
+  const chat = useChat();
+  const { user } = useSelector((state) => state.auth);
+  console.log(user);
+  useEffect(() => {
+    chat.initializeSocketConnection();
+  }, []);
   return (
     <div>Dashboard</div>
   )
 }
+
+export { Dashboard };
+export default Dashboard;
