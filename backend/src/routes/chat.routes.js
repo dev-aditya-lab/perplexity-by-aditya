@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import { chatMessageController, getChatMessages, getChats } from '../controllers/chat.controller.js';
+import { chatMessageController, deleteChatController, getChatMessages, getChats } from '../controllers/chat.controller.js';
 import { authMiddleware } from '../middleware/auth.middleware.js';
 const chatRoute = Router();
 
@@ -25,7 +25,11 @@ chatRoute.get("/", authMiddleware, getChats);
  */
 chatRoute.get("/:chatId/messages", authMiddleware, getChatMessages);
 
-
-
+/**
+ * @route delete /api/chats/delete/:chatId
+ * @desc Delete a specific chat conversation and its associated messages.
+ * @access Private (requires authentication)
+ */
+chatRoute.delete("/delete/:chatId", authMiddleware, deleteChatController);
 
 export default chatRoute;

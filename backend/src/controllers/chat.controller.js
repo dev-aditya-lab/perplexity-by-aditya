@@ -55,7 +55,7 @@ export async function getChats(req, res) {
     const { chatId } = req.params;
     try {
         const chats = await chatModel.find({ user });
-        if (!chats) {
+        if (chats.length === 0) {
             return res.status(404).json({ error: "Chat not found" });
         }
         res.status(200).json({
@@ -84,5 +84,21 @@ export async function getChatMessages(req, res) {
     } catch (error) {
         console.error("Error in getChatMessages:", error);
         res.status(500).json({ error: "Failed to retrieve chat messages" });
+    }
+}
+
+
+export async function deleteChatController(req, res) {
+    const { chatId } = req.params;
+    try {
+        const chat = await chatModel.findOneAndDelete({ _id: chatId, user: req.user.userId });
+        if (!chat) {
+            return res.status(404).json({ error: "Chat not found" });
+        }
+        await messageModel.deleteMany({ chat: chatId });
+        res.status(200).json({ message: "Chat deleted successfully" });
+    } catch (error) {
+        console.error("Error in deleteChatController:", error);
+        res.status(500).json({ error: "Failed to delete chat" });
     }
 }
