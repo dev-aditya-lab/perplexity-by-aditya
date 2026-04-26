@@ -1,13 +1,19 @@
-import { HumanMessage, SystemMessage } from "@langchain/core/messages";
+import { HumanMessage, SystemMessage,AIMessage } from "@langchain/core/messages";
 import { msgModel, chatTitleModel } from "./ai.models.js";
 import { chatTitleModelSystemMessage, messageModelSystemMessage } from "./ai.systemMessage.js";
 
 
 
-export async function sendMessageToAI(message) {
+export async function sendMessageToAI(Allmessages) {
     const response = await msgModel.invoke([
         new SystemMessage(messageModelSystemMessage),
-        new HumanMessage(message),
+        ...Allmessages.map(msg => {
+            if (msg.role === "user") {
+                return new HumanMessage(msg.content);
+            } else {
+                return new AIMessage(msg.content);
+            }
+        })
     ]);
 
     return response.text;
