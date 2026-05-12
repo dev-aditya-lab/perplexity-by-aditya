@@ -1,0 +1,26 @@
+{
+  "chunk_id": 1,
+  "total_chunks": 3,
+  "files": [
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\server.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\app.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\config\\Database\\database.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\config\\redis\\redis.config.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\controllers\\auth.controller.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\controllers\\chat.controller.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\controllers\\user.controller.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\middleware\\auth.middleware.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\models\\chat.model.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\models\\message.model.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\models\\user.model.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\routes\\auth.routes.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\routes\\chat.routes.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\routes\\user.route.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\services\\AI\\ai.models.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\services\\AI\\ai.service.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\services\\AI\\ai.systemMessage.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\services\\mail\\mail.service.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\sockets\\server.socket.js",
+    "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\backend\\src\\utils\\mailTemplates\\accountLoginMailTemplate.js"
+  ]
+}

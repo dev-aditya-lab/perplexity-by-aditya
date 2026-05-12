@@ -1,0 +1,3381 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "members": [
+          "auth_controller",
+          "user_model",
+          "jwt_lib",
+          "mail_service"
+        ],
+        "relation": "authentication_pipeline",
+        "description": "User registration and verification flow"
+      },
+      {
+        "members": [
+          "chat_controller",
+          "chat_model",
+          "message_model",
+          "ai_service"
+        ],
+        "relation": "chat_messaging_pipeline",
+        "description": "Chat message creation and AI response generation"
+      },
+      {
+        "members": [
+          "server_entry",
+          "express_app",
+          "auth_routes",
+          "chat_routes"
+        ],
+        "relation": "http_server_setup",
+        "description": "Express server initialization with route registration"
+      },
+      {
+        "members": [
+          "ai_service",
+          "ai_models",
+          "ai_system_message",
+          "langchain_groq"
+        ],
+        "relation": "ai_integration_layer",
+        "description": "Groq AI model integration with system prompts"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "server.js",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L1",
+      "id": "backend_server_js"
+    },
+    {
+      "label": "httpServer",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L7",
+      "id": "backend_server_httpserver"
+    },
+    {
+      "label": "startServer()",
+      "file_type": "code",
+      "source_file": "backend/server.js",
+      "source_location": "L11",
+      "id": "backend_server_startserver"
+    },
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "backend/src/app.js",
+      "source_location": "L1",
+      "id": "backend_src_app_js"
+    },
+    {
+      "label": "app",
+      "file_type": "code",
+      "source_file": "backend/src/app.js",
+      "source_location": "L2",
+      "id": "src_app_app"
+    },
+    {
+      "label": "ua",
+      "file_type": "code",
+      "source_file": "backend/src/app.js",
+      "source_location": "L38",
+      "id": "src_app_ua"
+    },
+    {
+      "label": "database.js",
+      "file_type": "code",
+      "source_file": "backend/src/config/Database/database.js",
+      "source_location": "L1",
+      "id": "backend_src_config_database_database_js"
+    },
+    {
+      "label": "connectDB()",
+      "file_type": "code",
+      "source_file": "backend/src/config/Database/database.js",
+      "source_location": "L3",
+      "id": "database_database_connectdb"
+    },
+    {
+      "label": "redis.config.js",
+      "file_type": "code",
+      "source_file": "backend/src/config/redis/redis.config.js",
+      "source_location": "L1",
+      "id": "backend_src_config_redis_redis_config_js"
+    },
+    {
+      "label": "redisClient",
+      "file_type": "code",
+      "source_file": "backend/src/config/redis/redis.config.js",
+      "source_location": "L3",
+      "id": "redis_redis_config_redisclient"
+    },
+    {
+      "label": "auth.controller.js",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L1",
+      "id": "backend_src_controllers_auth_controller_js"
+    },
+    {
+      "label": "registerController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L10",
+      "id": "controllers_auth_controller_registercontroller"
+    },
+    {
+      "label": "verifyEmailController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L55",
+      "id": "controllers_auth_controller_verifyemailcontroller"
+    },
+    {
+      "label": "loginController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L105",
+      "id": "controllers_auth_controller_logincontroller"
+    },
+    {
+      "label": "getMeController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L158",
+      "id": "controllers_auth_controller_getmecontroller"
+    },
+    {
+      "label": "forgetPasswordByEmailOtpController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L175",
+      "id": "controllers_auth_controller_forgetpasswordbyemailotpcontroller"
+    },
+    {
+      "label": "verifyForgetPasswordOtpController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L201",
+      "id": "controllers_auth_controller_verifyforgetpasswordotpcontroller"
+    },
+    {
+      "label": "chnagePasswordController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L237",
+      "id": "controllers_auth_controller_chnagepasswordcontroller"
+    },
+    {
+      "label": "logoutController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L264",
+      "id": "controllers_auth_controller_logoutcontroller"
+    },
+    {
+      "label": "chat.controller.js",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L1",
+      "id": "backend_src_controllers_chat_controller_js"
+    },
+    {
+      "label": "chatMessageController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L7",
+      "id": "controllers_chat_controller_chatmessagecontroller"
+    },
+    {
+      "label": "getChats()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L53",
+      "id": "controllers_chat_controller_getchats"
+    },
+    {
+      "label": "getChatMessages()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L71",
+      "id": "controllers_chat_controller_getchatmessages"
+    },
+    {
+      "label": "deleteChatController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L91",
+      "id": "controllers_chat_controller_deletechatcontroller"
+    },
+    {
+      "label": "user.controller.js",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/user.controller.js",
+      "source_location": "L1",
+      "id": "backend_src_controllers_user_controller_js"
+    },
+    {
+      "label": "editUserController()",
+      "file_type": "code",
+      "source_file": "backend/src/controllers/user.controller.js",
+      "source_location": "L2",
+      "id": "controllers_user_controller_editusercontroller"
+    },
+    {
+      "label": "auth.middleware.js",
+      "file_type": "code",
+      "source_file": "backend/src/middleware/auth.middleware.js",
+      "source_location": "L1",
+      "id": "backend_src_middleware_auth_middleware_js"
+    },
+    {
+      "label": "authMiddleware()",
+      "file_type": "code",
+      "source_file": "backend/src/middleware/auth.middleware.js",
+      "source_location": "L4",
+      "id": "middleware_auth_middleware_authmiddleware"
+    },
+    {
+      "label": "chat.model.js",
+      "file_type": "code",
+      "source_file": "backend/src/models/chat.model.js",
+      "source_location": "L1",
+      "id": "backend_src_models_chat_model_js"
+    },
+    {
+      "label": "chatSchema",
+      "file_type": "code",
+      "source_file": "backend/src/models/chat.model.js",
+      "source_location": "L3",
+      "id": "models_chat_model_chatschema"
+    },
+    {
+      "label": "chatModel",
+      "file_type": "code",
+      "source_file": "backend/src/models/chat.model.js",
+      "source_location": "L24",
+      "id": "models_chat_model_chatmodel"
+    },
+    {
+      "label": "message.model.js",
+      "file_type": "code",
+      "source_file": "backend/src/models/message.model.js",
+      "source_location": "L1",
+      "id": "backend_src_models_message_model_js"
+    },
+    {
+      "label": "messageSchema",
+      "file_type": "code",
+      "source_file": "backend/src/models/message.model.js",
+      "source_location": "L3",
+      "id": "models_message_model_messageschema"
+    },
+    {
+      "label": "messageModel",
+      "file_type": "code",
+      "source_file": "backend/src/models/message.model.js",
+      "source_location": "L28",
+      "id": "models_message_model_messagemodel"
+    },
+    {
+      "label": "user.model.js",
+      "file_type": "code",
+      "source_file": "backend/src/models/user.model.js",
+      "source_location": "L1",
+      "id": "backend_src_models_user_model_js"
+    },
+    {
+      "label": "userSchema",
+      "file_type": "code",
+      "source_file": "backend/src/models/user.model.js",
+      "source_location": "L4",
+      "id": "models_user_model_userschema"
+    },
+    {
+      "label": "userModel",
+      "file_type": "code",
+      "source_file": "backend/src/models/user.model.js",
+      "source_location": "L55",
+      "id": "models_user_model_usermodel"
+    },
+    {
+      "label": "auth.routes.js",
+      "file_type": "code",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L1",
+      "id": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "label": "authRouter",
+      "file_type": "code",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L5",
+      "id": "routes_auth_routes_authrouter"
+    },
+    {
+      "label": "chat.routes.js",
+      "file_type": "code",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L1",
+      "id": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "label": "chatRoute",
+      "file_type": "code",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L4",
+      "id": "routes_chat_routes_chatroute"
+    },
+    {
+      "label": "user.route.js",
+      "file_type": "code",
+      "source_file": "backend/src/routes/user.route.js",
+      "source_location": "L1",
+      "id": "backend_src_routes_user_route_js"
+    },
+    {
+      "label": "userRoute",
+      "file_type": "code",
+      "source_file": "backend/src/routes/user.route.js",
+      "source_location": "L2",
+      "id": "routes_user_route_userroute"
+    },
+    {
+      "label": "ai.models.js",
+      "file_type": "code",
+      "source_file": "backend/src/services/AI/ai.models.js",
+      "source_location": "L1",
+      "id": "backend_src_services_ai_ai_models_js"
+    },
+    {
+      "label": "msgModel",
+      "file_type": "code",
+      "source_file": "backend/src/services/AI/ai.models.js",
+      "source_location": "L5",
+      "id": "ai_ai_models_msgmodel"
+    },
+    {
+      "label": "chatTitleModel",
+      "file_type": "code",
+      "source_file": "backend/src/services/AI/ai.models.js",
+      "source_location": "L12",
+      "id": "ai_ai_models_chattitlemodel"
+    },
+    {
+      "label": "ai.service.js",
+      "file_type": "code",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L1",
+      "id": "backend_src_services_ai_ai_service_js"
+    },
+    {
+      "label": "sendMessageToAI()",
+      "file_type": "code",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L5",
+      "id": "ai_ai_service_sendmessagetoai"
+    },
+    {
+      "label": "generateChatTitle()",
+      "file_type": "code",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L22",
+      "id": "ai_ai_service_generatechattitle"
+    },
+    {
+      "label": "ai.systemMessage.js",
+      "file_type": "code",
+      "source_file": "backend/src/services/AI/ai.systemMessage.js",
+      "source_location": "L1",
+      "id": "backend_src_services_ai_ai_systemmessage_js"
+    },
+    {
+      "label": "mail.service.js",
+      "file_type": "code",
+      "source_file": "backend/src/services/mail/mail.service.js",
+      "source_location": "L1",
+      "id": "backend_src_services_mail_mail_service_js"
+    },
+    {
+      "label": "resend",
+      "file_type": "code",
+      "source_file": "backend/src/services/mail/mail.service.js",
+      "source_location": "L4",
+      "id": "mail_mail_service_resend"
+    },
+    {
+      "label": "sendEmail()",
+      "file_type": "code",
+      "source_file": "backend/src/services/mail/mail.service.js",
+      "source_location": "L6",
+      "id": "mail_mail_service_sendemail"
+    },
+    {
+      "label": "server.socket.js",
+      "file_type": "code",
+      "source_file": "backend/src/sockets/server.socket.js",
+      "source_location": "L1",
+      "id": "backend_src_sockets_server_socket_js"
+    },
+    {
+      "label": "initSocketServer()",
+      "file_type": "code",
+      "source_file": "backend/src/sockets/server.socket.js",
+      "source_location": "L5",
+      "id": "sockets_server_socket_initsocketserver"
+    },
+    {
+      "label": "getIO()",
+      "file_type": "code",
+      "source_file": "backend/src/sockets/server.socket.js",
+      "source_location": "L19",
+      "id": "sockets_server_socket_getio"
+    },
+    {
+      "label": "accountLoginMailTemplate.js",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/accountLoginMailTemplate.js",
+      "source_location": "L1",
+      "id": "backend_src_utils_mailtemplates_accountloginmailtemplate_js"
+    },
+    {
+      "label": "accountLoginMailTemplate()",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/accountLoginMailTemplate.js",
+      "source_location": "L1",
+      "id": "mailtemplates_accountloginmailtemplate_accountloginmailtemplate"
+    },
+    {
+      "label": "emailVerifyHTMLtemplate.js",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/emailVerifyHTMLtemplate.js",
+      "source_location": "L1",
+      "id": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js"
+    },
+    {
+      "label": "emailVerificationTemplate()",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/emailVerifyHTMLtemplate.js",
+      "source_location": "L1",
+      "id": "mailtemplates_emailverifyhtmltemplate_emailverificationtemplate"
+    },
+    {
+      "label": "emailVerifiedTemplate()",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/emailVerifyHTMLtemplate.js",
+      "source_location": "L98",
+      "id": "mailtemplates_emailverifyhtmltemplate_emailverifiedtemplate"
+    },
+    {
+      "label": "emailAlreadyVerifiedTemplate()",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/emailVerifyHTMLtemplate.js",
+      "source_location": "L150",
+      "id": "mailtemplates_emailverifyhtmltemplate_emailalreadyverifiedtemplate"
+    },
+    {
+      "label": "forgetpasswordotp.js",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/forgetpasswordotp.js",
+      "source_location": "L1",
+      "id": "backend_src_utils_mailtemplates_forgetpasswordotp_js"
+    },
+    {
+      "label": "forgetPasswordOTPTemplate()",
+      "file_type": "code",
+      "source_file": "backend/src/utils/mailTemplates/forgetpasswordotp.js",
+      "source_location": "L1",
+      "id": "mailtemplates_forgetpasswordotp_forgetpasswordotptemplate"
+    },
+    {
+      "label": "generateOTP.js",
+      "file_type": "code",
+      "source_file": "backend/src/utils/OtpSystem/generateOTP.js",
+      "source_location": "L1",
+      "id": "backend_src_utils_otpsystem_generateotp_js"
+    },
+    {
+      "label": "generateOTP()",
+      "file_type": "code",
+      "source_file": "backend/src/utils/OtpSystem/generateOTP.js",
+      "source_location": "L4",
+      "id": "otpsystem_generateotp_generateotp"
+    },
+    {
+      "label": "auth.validator.js",
+      "file_type": "code",
+      "source_file": "backend/src/validators/auth.validator.js",
+      "source_location": "L1",
+      "id": "backend_src_validators_auth_validator_js"
+    },
+    {
+      "label": "validate()",
+      "file_type": "code",
+      "source_file": "backend/src/validators/auth.validator.js",
+      "source_location": "L3",
+      "id": "validators_auth_validator_validate"
+    },
+    {
+      "label": "registerValidator",
+      "file_type": "code",
+      "source_file": "backend/src/validators/auth.validator.js",
+      "source_location": "L11",
+      "id": "validators_auth_validator_registervalidator"
+    },
+    {
+      "label": "loginValidator",
+      "file_type": "code",
+      "source_file": "backend/src/validators/auth.validator.js",
+      "source_location": "L27",
+      "id": "validators_auth_validator_loginvalidator"
+    },
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "frontend/eslint.config.js",
+      "source_location": "L1",
+      "id": "frontend_eslint_config_js"
+    },
+    {
+      "label": "tailwind.config.js",
+      "file_type": "code",
+      "source_file": "frontend/tailwind.config.js",
+      "source_location": "L1",
+      "id": "frontend_tailwind_config_js"
+    },
+    {
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "frontend/vite.config.js",
+      "source_location": "L1",
+      "id": "frontend_vite_config_js"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_main_jsx"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_app_jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L7",
+      "id": "app_app_app"
+    },
+    {
+      "label": "Loading.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/components/Loading.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_components_loading_jsx"
+    },
+    {
+      "label": "Loading()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/components/Loading.jsx",
+      "source_location": "L3",
+      "id": "components_loading_loading"
+    },
+    {
+      "label": "AuthProtected.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/AuthProtected.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_components_authprotected_jsx"
+    },
+    {
+      "label": "AuthProtected()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/AuthProtected.jsx",
+      "source_location": "L6",
+      "id": "components_authprotected_authprotected"
+    },
+    {
+      "label": "AuthShell.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/AuthShell.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_components_authshell_jsx"
+    },
+    {
+      "label": "AuthShell()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/AuthShell.jsx",
+      "source_location": "L7",
+      "id": "components_authshell_authshell"
+    },
+    {
+      "label": "FormGroup.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/FormGroup.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_components_formgroup_jsx"
+    },
+    {
+      "label": "FormGroup()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/FormGroup.jsx",
+      "source_location": "L3",
+      "id": "components_formgroup_formgroup"
+    },
+    {
+      "label": "GithubAuthBtn.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/GithubAuthBtn.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_components_githubauthbtn_jsx"
+    },
+    {
+      "label": "GithubAuthBtn()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/GithubAuthBtn.jsx",
+      "source_location": "L3",
+      "id": "components_githubauthbtn_githubauthbtn"
+    },
+    {
+      "label": "GoogleAuthBtn.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/GoogleAuthBtn.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_components_googleauthbtn_jsx"
+    },
+    {
+      "label": "GoogleAuthBtn()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/components/GoogleAuthBtn.jsx",
+      "source_location": "L3",
+      "id": "components_googleauthbtn_googleauthbtn"
+    },
+    {
+      "label": "useAuth.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_hook_useauth_js"
+    },
+    {
+      "label": "useAuth()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L5",
+      "id": "hook_useauth_useauth"
+    },
+    {
+      "label": "Login.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "label": "Login()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L11",
+      "id": "pages_login_login"
+    },
+    {
+      "label": "Register.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "label": "Register()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L11",
+      "id": "pages_register_register"
+    },
+    {
+      "label": "auth.api.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_auth_services_auth_api_js"
+    },
+    {
+      "label": "api",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L5",
+      "id": "services_auth_api_api"
+    },
+    {
+      "label": "registerUser()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L10",
+      "id": "services_auth_api_registeruser"
+    },
+    {
+      "label": "loginUser()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L19",
+      "id": "services_auth_api_loginuser"
+    },
+    {
+      "label": "getMe()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L28",
+      "id": "services_auth_api_getme"
+    },
+    {
+      "label": "logoutUser()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L37",
+      "id": "services_auth_api_logoutuser"
+    },
+    {
+      "label": "ChatInterface.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/components/ChatInterface.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_chat_components_chatinterface_jsx"
+    },
+    {
+      "label": "ChatInterface()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/components/ChatInterface.jsx",
+      "source_location": "L4",
+      "id": "components_chatinterface_chatinterface"
+    },
+    {
+      "label": "Sidebar.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/components/Sidebar.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_chat_components_sidebar_jsx"
+    },
+    {
+      "label": "Sidebar()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/components/Sidebar.jsx",
+      "source_location": "L6",
+      "id": "components_sidebar_sidebar"
+    },
+    {
+      "label": "useChat.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_chat_hooks_usechat_js"
+    },
+    {
+      "label": "useChat()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L6",
+      "id": "hooks_usechat_usechat"
+    },
+    {
+      "label": "Dashboard.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_chat_pages_dashboard_jsx"
+    },
+    {
+      "label": "Dashboard()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L7",
+      "id": "pages_dashboard_dashboard"
+    },
+    {
+      "label": "chat.api.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_chat_services_chat_api_js"
+    },
+    {
+      "label": "api",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L3",
+      "id": "services_chat_api_api"
+    },
+    {
+      "label": "sendMessage()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L8",
+      "id": "services_chat_api_sendmessage"
+    },
+    {
+      "label": "getChats()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L18",
+      "id": "services_chat_api_getchats"
+    },
+    {
+      "label": "getChatMessages()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L28",
+      "id": "services_chat_api_getchatmessages"
+    },
+    {
+      "label": "deleteChat()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L39",
+      "id": "services_chat_api_deletechat"
+    },
+    {
+      "label": "chat.socket.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.socket.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_features_chat_services_chat_socket_js"
+    },
+    {
+      "label": "initializeSocketConnection()",
+      "file_type": "code",
+      "source_file": "frontend/src/app/features/chat/services/chat.socket.js",
+      "source_location": "L3",
+      "id": "services_chat_socket_initializesocketconnection"
+    },
+    {
+      "label": "auth.slice.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Redux/reducers/auth.slice.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_redux_reducers_auth_slice_js"
+    },
+    {
+      "label": "authSlice",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Redux/reducers/auth.slice.js",
+      "source_location": "L3",
+      "id": "reducers_auth_slice_authslice"
+    },
+    {
+      "label": "chat.slice.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Redux/reducers/chat.slice.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_redux_reducers_chat_slice_js"
+    },
+    {
+      "label": "chatSlice",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Redux/reducers/chat.slice.js",
+      "source_location": "L3",
+      "id": "reducers_chat_slice_chatslice"
+    },
+    {
+      "label": "app.store.js",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Redux/store/app.store.js",
+      "source_location": "L1",
+      "id": "frontend_src_app_redux_store_app_store_js"
+    },
+    {
+      "label": "store",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Redux/store/app.store.js",
+      "source_location": "L6",
+      "id": "store_app_store_store"
+    },
+    {
+      "label": "App.routes.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Routes/App.routes.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_app_routes_app_routes_jsx"
+    },
+    {
+      "label": "router",
+      "file_type": "code",
+      "source_file": "frontend/src/app/Routes/App.routes.jsx",
+      "source_location": "L7",
+      "id": "routes_app_routes_router"
+    },
+    {
+      "label": "Server Entry Point",
+      "file_type": "code",
+      "id": "server_entry"
+    },
+    {
+      "label": "Express App",
+      "file_type": "code",
+      "id": "express_app"
+    },
+    {
+      "label": "MongoDB Connection",
+      "file_type": "code",
+      "id": "mongodb_connection"
+    },
+    {
+      "label": "Redis Client",
+      "file_type": "code",
+      "id": "redis_client"
+    },
+    {
+      "label": "Auth Controller",
+      "file_type": "code",
+      "id": "auth_controller"
+    },
+    {
+      "label": "Chat Controller",
+      "file_type": "code",
+      "id": "chat_controller"
+    },
+    {
+      "label": "User Controller",
+      "file_type": "code",
+      "id": "user_controller"
+    },
+    {
+      "label": "Auth Middleware",
+      "file_type": "code",
+      "id": "auth_middleware"
+    },
+    {
+      "label": "User Model",
+      "file_type": "code",
+      "id": "user_model"
+    },
+    {
+      "label": "Chat Model",
+      "file_type": "code",
+      "id": "chat_model"
+    },
+    {
+      "label": "Message Model",
+      "file_type": "code",
+      "id": "message_model"
+    },
+    {
+      "label": "Auth Routes",
+      "file_type": "code",
+      "id": "auth_routes"
+    },
+    {
+      "label": "Chat Routes",
+      "file_type": "code",
+      "id": "chat_routes"
+    },
+    {
+      "label": "User Routes",
+      "file_type": "code",
+      "id": "user_routes"
+    },
+    {
+      "label": "AI Service",
+      "file_type": "code",
+      "id": "ai_service"
+    },
+    {
+      "label": "AI Models (Groq)",
+      "file_type": "code",
+      "id": "ai_models"
+    },
+    {
+      "label": "AI System Message",
+      "file_type": "code",
+      "id": "ai_system_message"
+    },
+    {
+      "label": "Mail Service (Resend)",
+      "file_type": "code",
+      "id": "mail_service"
+    },
+    {
+      "label": "Socket.io Server",
+      "file_type": "code",
+      "id": "socket_server"
+    },
+    {
+      "label": "Account Login Mail Template",
+      "file_type": "code",
+      "id": "account_login_template"
+    },
+    {
+      "label": "JWT Library",
+      "file_type": "code",
+      "id": "jwt_lib"
+    },
+    {
+      "label": "Bcrypt Library",
+      "file_type": "code",
+      "id": "bcrypt_lib"
+    },
+    {
+      "label": "LangChain Groq",
+      "file_type": "code",
+      "id": "langchain_groq"
+    },
+    {
+      "label": "Socket.io Library",
+      "file_type": "code",
+      "id": "socket_io_lib"
+    }
+  ],
+  "edges": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_server_js",
+      "_tgt": "backend_src_app_js",
+      "source": "backend_server_js",
+      "target": "backend_src_app_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_server_js",
+      "_tgt": "backend_src_config_database_database_js",
+      "source": "backend_server_js",
+      "target": "backend_src_config_database_database_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_server_js",
+      "_tgt": "backend_src_sockets_server_socket_js",
+      "source": "backend_server_js",
+      "target": "backend_src_sockets_server_socket_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_server_js",
+      "_tgt": "sockets_server_socket_initsocketserver",
+      "source": "backend_server_js",
+      "target": "sockets_server_socket_initsocketserver"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "backend_server_js",
+      "_tgt": "backend_server_httpserver",
+      "source": "backend_server_js",
+      "target": "backend_server_httpserver"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/server.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "backend_server_js",
+      "_tgt": "backend_server_startserver",
+      "source": "backend_server_js",
+      "target": "backend_server_startserver"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/server.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "backend_server_startserver",
+      "_tgt": "database_database_connectdb",
+      "source": "backend_server_startserver",
+      "target": "database_database_connectdb"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_app_js",
+      "_tgt": "src_app_app",
+      "source": "backend_src_app_js",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "backend_src_app_js",
+      "_tgt": "backend_src_routes_auth_routes_js",
+      "source": "backend_src_app_js",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "backend_src_app_js",
+      "_tgt": "backend_src_routes_chat_routes_js",
+      "source": "backend_src_app_js",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/app.js",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "backend_src_app_js",
+      "_tgt": "src_app_ua",
+      "source": "backend_src_app_js",
+      "target": "src_app_ua"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/config/Database/database.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_config_database_database_js",
+      "_tgt": "database_database_connectdb",
+      "source": "backend_src_config_database_database_js",
+      "target": "database_database_connectdb"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/config/redis/redis.config.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_config_redis_redis_config_js",
+      "_tgt": "redis_redis_config_redisclient",
+      "source": "backend_src_config_redis_redis_config_js",
+      "target": "redis_redis_config_redisclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "backend_src_models_user_model_js",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "backend_src_models_user_model_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "backend_src_services_mail_mail_service_js",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "backend_src_services_mail_mail_service_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "mail_mail_service_sendemail",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "mail_mail_service_sendemail"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailalreadyverifiedtemplate",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailalreadyverifiedtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailverificationtemplate",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailverificationtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailverifiedtemplate",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailverifiedtemplate"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "backend_src_utils_mailtemplates_accountloginmailtemplate_js",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "backend_src_utils_mailtemplates_accountloginmailtemplate_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "mailtemplates_accountloginmailtemplate_accountloginmailtemplate",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "mailtemplates_accountloginmailtemplate_accountloginmailtemplate"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "backend_src_utils_otpsystem_generateotp_js",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "backend_src_utils_otpsystem_generateotp_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "otpsystem_generateotp_generateotp",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "otpsystem_generateotp_generateotp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_registercontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_registercontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_verifyemailcontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_verifyemailcontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_logincontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_logincontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_getmecontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_getmecontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L175",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_forgetpasswordbyemailotpcontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L201",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_verifyforgetpasswordotpcontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_verifyforgetpasswordotpcontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L237",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_chnagepasswordcontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_chnagepasswordcontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L264",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_auth_controller_js",
+      "_tgt": "controllers_auth_controller_logoutcontroller",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "controllers_auth_controller_logoutcontroller"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "backend_src_controllers_auth_controller_js",
+      "source": "backend_src_controllers_auth_controller_js",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "controllers_auth_controller_registercontroller",
+      "source": "controllers_auth_controller_registercontroller",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_registercontroller",
+      "_tgt": "mail_mail_service_sendemail",
+      "source": "controllers_auth_controller_registercontroller",
+      "target": "mail_mail_service_sendemail"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_registercontroller",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailverificationtemplate",
+      "source": "controllers_auth_controller_registercontroller",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailverificationtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "controllers_auth_controller_verifyemailcontroller",
+      "source": "controllers_auth_controller_verifyemailcontroller",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_verifyemailcontroller",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailalreadyverifiedtemplate",
+      "source": "controllers_auth_controller_verifyemailcontroller",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailalreadyverifiedtemplate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_verifyemailcontroller",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailverifiedtemplate",
+      "source": "controllers_auth_controller_verifyemailcontroller",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailverifiedtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "controllers_auth_controller_logincontroller",
+      "source": "controllers_auth_controller_logincontroller",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_logincontroller",
+      "_tgt": "mail_mail_service_sendemail",
+      "source": "controllers_auth_controller_logincontroller",
+      "target": "mail_mail_service_sendemail"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L148",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_logincontroller",
+      "_tgt": "mailtemplates_accountloginmailtemplate_accountloginmailtemplate",
+      "source": "controllers_auth_controller_logincontroller",
+      "target": "mailtemplates_accountloginmailtemplate_accountloginmailtemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "controllers_auth_controller_getmecontroller",
+      "source": "controllers_auth_controller_getmecontroller",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "source": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L185",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "_tgt": "otpsystem_generateotp_generateotp",
+      "source": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "target": "otpsystem_generateotp_generateotp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "_tgt": "mail_mail_service_sendemail",
+      "source": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "target": "mail_mail_service_sendemail"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/src/controllers/auth.controller.js",
+      "source_location": "L192",
+      "weight": 1.0,
+      "_src": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "_tgt": "mailtemplates_forgetpasswordotp_forgetpasswordotptemplate",
+      "source": "controllers_auth_controller_forgetpasswordbyemailotpcontroller",
+      "target": "mailtemplates_forgetpasswordotp_forgetpasswordotptemplate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "controllers_auth_controller_verifyforgetpasswordotpcontroller",
+      "source": "controllers_auth_controller_verifyforgetpasswordotpcontroller",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "backend_src_models_chat_model_js",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "backend_src_models_chat_model_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "backend_src_models_message_model_js",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "backend_src_models_message_model_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "backend_src_services_ai_ai_service_js",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "backend_src_services_ai_ai_service_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "ai_ai_service_sendmessagetoai",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "ai_ai_service_sendmessagetoai"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "ai_ai_service_generatechattitle",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "ai_ai_service_generatechattitle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "controllers_chat_controller_chatmessagecontroller",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "controllers_chat_controller_chatmessagecontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "controllers_chat_controller_getchats",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "controllers_chat_controller_getchats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "controllers_chat_controller_getchatmessages",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "controllers_chat_controller_getchatmessages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_chat_controller_js",
+      "_tgt": "controllers_chat_controller_deletechatcontroller",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "controllers_chat_controller_deletechatcontroller"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "backend_src_controllers_chat_controller_js",
+      "source": "backend_src_controllers_chat_controller_js",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "controllers_chat_controller_chatmessagecontroller",
+      "source": "controllers_chat_controller_chatmessagecontroller",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "controllers_chat_controller_chatmessagecontroller",
+      "_tgt": "ai_ai_service_generatechattitle",
+      "source": "controllers_chat_controller_chatmessagecontroller",
+      "target": "ai_ai_service_generatechattitle"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/src/controllers/chat.controller.js",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "controllers_chat_controller_chatmessagecontroller",
+      "_tgt": "ai_ai_service_sendmessagetoai",
+      "source": "controllers_chat_controller_chatmessagecontroller",
+      "target": "ai_ai_service_sendmessagetoai"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "controllers_chat_controller_getchats",
+      "source": "controllers_chat_controller_getchats",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "controllers_chat_controller_getchatmessages",
+      "source": "controllers_chat_controller_getchatmessages",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "controllers_chat_controller_deletechatcontroller",
+      "source": "controllers_chat_controller_deletechatcontroller",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/controllers/user.controller.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_controllers_user_controller_js",
+      "_tgt": "controllers_user_controller_editusercontroller",
+      "source": "backend_src_controllers_user_controller_js",
+      "target": "controllers_user_controller_editusercontroller"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/middleware/auth.middleware.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_middleware_auth_middleware_js",
+      "_tgt": "middleware_auth_middleware_authmiddleware",
+      "source": "backend_src_middleware_auth_middleware_js",
+      "target": "middleware_auth_middleware_authmiddleware"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "backend_src_middleware_auth_middleware_js",
+      "source": "backend_src_middleware_auth_middleware_js",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "backend_src_middleware_auth_middleware_js",
+      "source": "backend_src_middleware_auth_middleware_js",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "middleware_auth_middleware_authmiddleware",
+      "source": "middleware_auth_middleware_authmiddleware",
+      "target": "backend_src_routes_auth_routes_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "middleware_auth_middleware_authmiddleware",
+      "source": "middleware_auth_middleware_authmiddleware",
+      "target": "backend_src_routes_chat_routes_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/models/chat.model.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_models_chat_model_js",
+      "_tgt": "models_chat_model_chatschema",
+      "source": "backend_src_models_chat_model_js",
+      "target": "models_chat_model_chatschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/models/chat.model.js",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "backend_src_models_chat_model_js",
+      "_tgt": "models_chat_model_chatmodel",
+      "source": "backend_src_models_chat_model_js",
+      "target": "models_chat_model_chatmodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/models/message.model.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_models_message_model_js",
+      "_tgt": "models_message_model_messageschema",
+      "source": "backend_src_models_message_model_js",
+      "target": "models_message_model_messageschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/models/message.model.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "backend_src_models_message_model_js",
+      "_tgt": "models_message_model_messagemodel",
+      "source": "backend_src_models_message_model_js",
+      "target": "models_message_model_messagemodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/models/user.model.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_models_user_model_js",
+      "_tgt": "models_user_model_userschema",
+      "source": "backend_src_models_user_model_js",
+      "target": "models_user_model_userschema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/models/user.model.js",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "backend_src_models_user_model_js",
+      "_tgt": "models_user_model_usermodel",
+      "source": "backend_src_models_user_model_js",
+      "target": "models_user_model_usermodel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "backend_src_validators_auth_validator_js",
+      "source": "backend_src_routes_auth_routes_js",
+      "target": "backend_src_validators_auth_validator_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "validators_auth_validator_loginvalidator",
+      "source": "backend_src_routes_auth_routes_js",
+      "target": "validators_auth_validator_loginvalidator"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "validators_auth_validator_registervalidator",
+      "source": "backend_src_routes_auth_routes_js",
+      "target": "validators_auth_validator_registervalidator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/auth.routes.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_routes_auth_routes_js",
+      "_tgt": "routes_auth_routes_authrouter",
+      "source": "backend_src_routes_auth_routes_js",
+      "target": "routes_auth_routes_authrouter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/chat.routes.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_routes_chat_routes_js",
+      "_tgt": "routes_chat_routes_chatroute",
+      "source": "backend_src_routes_chat_routes_js",
+      "target": "routes_chat_routes_chatroute"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/routes/user.route.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_routes_user_route_js",
+      "_tgt": "routes_user_route_userroute",
+      "source": "backend_src_routes_user_route_js",
+      "target": "routes_user_route_userroute"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.models.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_models_js",
+      "_tgt": "ai_ai_models_msgmodel",
+      "source": "backend_src_services_ai_ai_models_js",
+      "target": "ai_ai_models_msgmodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.models.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_models_js",
+      "_tgt": "ai_ai_models_chattitlemodel",
+      "source": "backend_src_services_ai_ai_models_js",
+      "target": "ai_ai_models_chattitlemodel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_service_js",
+      "_tgt": "backend_src_services_ai_ai_models_js",
+      "source": "backend_src_services_ai_ai_models_js",
+      "target": "backend_src_services_ai_ai_service_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_service_js",
+      "_tgt": "ai_ai_models_msgmodel",
+      "source": "ai_ai_models_msgmodel",
+      "target": "backend_src_services_ai_ai_service_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_service_js",
+      "_tgt": "ai_ai_models_chattitlemodel",
+      "source": "ai_ai_models_chattitlemodel",
+      "target": "backend_src_services_ai_ai_service_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_service_js",
+      "_tgt": "backend_src_services_ai_ai_systemmessage_js",
+      "source": "backend_src_services_ai_ai_service_js",
+      "target": "backend_src_services_ai_ai_systemmessage_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_service_js",
+      "_tgt": "ai_ai_service_sendmessagetoai",
+      "source": "backend_src_services_ai_ai_service_js",
+      "target": "ai_ai_service_sendmessagetoai"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/AI/ai.service.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "backend_src_services_ai_ai_service_js",
+      "_tgt": "ai_ai_service_generatechattitle",
+      "source": "backend_src_services_ai_ai_service_js",
+      "target": "ai_ai_service_generatechattitle"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/mail/mail.service.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_services_mail_mail_service_js",
+      "_tgt": "mail_mail_service_resend",
+      "source": "backend_src_services_mail_mail_service_js",
+      "target": "mail_mail_service_resend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/services/mail/mail.service.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "backend_src_services_mail_mail_service_js",
+      "_tgt": "mail_mail_service_sendemail",
+      "source": "backend_src_services_mail_mail_service_js",
+      "target": "mail_mail_service_sendemail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/sockets/server.socket.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_sockets_server_socket_js",
+      "_tgt": "sockets_server_socket_initsocketserver",
+      "source": "backend_src_sockets_server_socket_js",
+      "target": "sockets_server_socket_initsocketserver"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/sockets/server.socket.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "backend_src_sockets_server_socket_js",
+      "_tgt": "sockets_server_socket_getio",
+      "source": "backend_src_sockets_server_socket_js",
+      "target": "sockets_server_socket_getio"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/utils/mailTemplates/accountLoginMailTemplate.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "backend_src_utils_mailtemplates_accountloginmailtemplate_js",
+      "_tgt": "mailtemplates_accountloginmailtemplate_accountloginmailtemplate",
+      "source": "backend_src_utils_mailtemplates_accountloginmailtemplate_js",
+      "target": "mailtemplates_accountloginmailtemplate_accountloginmailtemplate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/utils/mailTemplates/emailVerifyHTMLtemplate.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailverificationtemplate",
+      "source": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailverificationtemplate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/utils/mailTemplates/emailVerifyHTMLtemplate.js",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailverifiedtemplate",
+      "source": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailverifiedtemplate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/utils/mailTemplates/emailVerifyHTMLtemplate.js",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_src": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js",
+      "_tgt": "mailtemplates_emailverifyhtmltemplate_emailalreadyverifiedtemplate",
+      "source": "backend_src_utils_mailtemplates_emailverifyhtmltemplate_js",
+      "target": "mailtemplates_emailverifyhtmltemplate_emailalreadyverifiedtemplate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/utils/mailTemplates/forgetpasswordotp.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "backend_src_utils_mailtemplates_forgetpasswordotp_js",
+      "_tgt": "mailtemplates_forgetpasswordotp_forgetpasswordotptemplate",
+      "source": "backend_src_utils_mailtemplates_forgetpasswordotp_js",
+      "target": "mailtemplates_forgetpasswordotp_forgetpasswordotptemplate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/utils/OtpSystem/generateOTP.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "backend_src_utils_otpsystem_generateotp_js",
+      "_tgt": "otpsystem_generateotp_generateotp",
+      "source": "backend_src_utils_otpsystem_generateotp_js",
+      "target": "otpsystem_generateotp_generateotp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/validators/auth.validator.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_validators_auth_validator_js",
+      "_tgt": "validators_auth_validator_validate",
+      "source": "backend_src_validators_auth_validator_js",
+      "target": "validators_auth_validator_validate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/validators/auth.validator.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "backend_src_validators_auth_validator_js",
+      "_tgt": "validators_auth_validator_registervalidator",
+      "source": "backend_src_validators_auth_validator_js",
+      "target": "validators_auth_validator_registervalidator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/validators/auth.validator.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "backend_src_validators_auth_validator_js",
+      "_tgt": "validators_auth_validator_loginvalidator",
+      "source": "backend_src_validators_auth_validator_js",
+      "target": "validators_auth_validator_loginvalidator"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_main_jsx",
+      "_tgt": "frontend_src_app_app_jsx",
+      "source": "frontend_src_main_jsx",
+      "target": "frontend_src_app_app_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_main_jsx",
+      "_tgt": "frontend_src_app_redux_store_app_store_js",
+      "source": "frontend_src_main_jsx",
+      "target": "frontend_src_app_redux_store_app_store_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/main.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_main_jsx",
+      "_tgt": "store_app_store_store",
+      "source": "frontend_src_main_jsx",
+      "target": "store_app_store_store"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_app_jsx",
+      "_tgt": "frontend_src_app_routes_app_routes_jsx",
+      "source": "frontend_src_app_app_jsx",
+      "target": "frontend_src_app_routes_app_routes_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_app_jsx",
+      "_tgt": "routes_app_routes_router",
+      "source": "frontend_src_app_app_jsx",
+      "target": "routes_app_routes_router"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_app_jsx",
+      "_tgt": "frontend_src_app_features_auth_hook_useauth_js",
+      "source": "frontend_src_app_app_jsx",
+      "target": "frontend_src_app_features_auth_hook_useauth_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_app_jsx",
+      "_tgt": "hook_useauth_useauth",
+      "source": "frontend_src_app_app_jsx",
+      "target": "hook_useauth_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "frontend_src_app_app_jsx",
+      "_tgt": "app_app_app",
+      "source": "frontend_src_app_app_jsx",
+      "target": "app_app_app"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/app/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "app_app_app",
+      "_tgt": "hook_useauth_useauth",
+      "source": "app_app_app",
+      "target": "hook_useauth_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/components/Loading.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_components_loading_jsx",
+      "_tgt": "components_loading_loading",
+      "source": "frontend_src_app_components_loading_jsx",
+      "target": "components_loading_loading"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/components/AuthProtected.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_components_authprotected_jsx",
+      "_tgt": "frontend_src_app_components_loading_jsx",
+      "source": "frontend_src_app_components_loading_jsx",
+      "target": "frontend_src_app_features_auth_components_authprotected_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "frontend_src_app_components_loading_jsx",
+      "source": "frontend_src_app_components_loading_jsx",
+      "target": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "frontend_src_app_components_loading_jsx",
+      "source": "frontend_src_app_components_loading_jsx",
+      "target": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/components/AuthProtected.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_components_authprotected_jsx",
+      "_tgt": "components_authprotected_authprotected",
+      "source": "frontend_src_app_features_auth_components_authprotected_jsx",
+      "target": "components_authprotected_authprotected"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Routes/App.routes.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "frontend_src_app_routes_app_routes_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_authprotected_jsx",
+      "source": "frontend_src_app_features_auth_components_authprotected_jsx",
+      "target": "frontend_src_app_routes_app_routes_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/components/AuthShell.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_components_authshell_jsx",
+      "_tgt": "components_authshell_authshell",
+      "source": "frontend_src_app_features_auth_components_authshell_jsx",
+      "target": "components_authshell_authshell"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_authshell_jsx",
+      "source": "frontend_src_app_features_auth_components_authshell_jsx",
+      "target": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_authshell_jsx",
+      "source": "frontend_src_app_features_auth_components_authshell_jsx",
+      "target": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/components/FormGroup.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_components_formgroup_jsx",
+      "_tgt": "components_formgroup_formgroup",
+      "source": "frontend_src_app_features_auth_components_formgroup_jsx",
+      "target": "components_formgroup_formgroup"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_formgroup_jsx",
+      "source": "frontend_src_app_features_auth_components_formgroup_jsx",
+      "target": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_formgroup_jsx",
+      "source": "frontend_src_app_features_auth_components_formgroup_jsx",
+      "target": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/components/GithubAuthBtn.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_components_githubauthbtn_jsx",
+      "_tgt": "components_githubauthbtn_githubauthbtn",
+      "source": "frontend_src_app_features_auth_components_githubauthbtn_jsx",
+      "target": "components_githubauthbtn_githubauthbtn"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_githubauthbtn_jsx",
+      "source": "frontend_src_app_features_auth_components_githubauthbtn_jsx",
+      "target": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_githubauthbtn_jsx",
+      "source": "frontend_src_app_features_auth_components_githubauthbtn_jsx",
+      "target": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/components/GoogleAuthBtn.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_components_googleauthbtn_jsx",
+      "_tgt": "components_googleauthbtn_googleauthbtn",
+      "source": "frontend_src_app_features_auth_components_googleauthbtn_jsx",
+      "target": "components_googleauthbtn_googleauthbtn"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_googleauthbtn_jsx",
+      "source": "frontend_src_app_features_auth_components_googleauthbtn_jsx",
+      "target": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "frontend_src_app_features_auth_components_googleauthbtn_jsx",
+      "source": "frontend_src_app_features_auth_components_googleauthbtn_jsx",
+      "target": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_hook_useauth_js",
+      "_tgt": "frontend_src_app_redux_reducers_auth_slice_js",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "frontend_src_app_redux_reducers_auth_slice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_hook_useauth_js",
+      "_tgt": "frontend_src_app_features_auth_services_auth_api_js",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "frontend_src_app_features_auth_services_auth_api_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_hook_useauth_js",
+      "_tgt": "services_auth_api_getme",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "services_auth_api_getme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_hook_useauth_js",
+      "_tgt": "services_auth_api_loginuser",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "services_auth_api_loginuser"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_hook_useauth_js",
+      "_tgt": "services_auth_api_registeruser",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "services_auth_api_registeruser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/hook/useAuth.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_hook_useauth_js",
+      "_tgt": "hook_useauth_useauth",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "hook_useauth_useauth"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "frontend_src_app_features_auth_hook_useauth_js",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "frontend_src_app_features_auth_hook_useauth_js",
+      "source": "frontend_src_app_features_auth_hook_useauth_js",
+      "target": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "hook_useauth_useauth",
+      "source": "hook_useauth_useauth",
+      "target": "frontend_src_app_features_auth_pages_login_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "hook_useauth_useauth",
+      "source": "hook_useauth_useauth",
+      "target": "frontend_src_app_features_auth_pages_register_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "pages_login_login",
+      "_tgt": "hook_useauth_useauth",
+      "source": "hook_useauth_useauth",
+      "target": "pages_login_login"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "pages_register_register",
+      "_tgt": "hook_useauth_useauth",
+      "source": "hook_useauth_useauth",
+      "target": "pages_register_register"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Login.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_login_jsx",
+      "_tgt": "pages_login_login",
+      "source": "frontend_src_app_features_auth_pages_login_jsx",
+      "target": "pages_login_login"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Routes/App.routes.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_routes_app_routes_jsx",
+      "_tgt": "frontend_src_app_features_auth_pages_login_jsx",
+      "source": "frontend_src_app_features_auth_pages_login_jsx",
+      "target": "frontend_src_app_routes_app_routes_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/pages/Register.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_pages_register_jsx",
+      "_tgt": "pages_register_register",
+      "source": "frontend_src_app_features_auth_pages_register_jsx",
+      "target": "pages_register_register"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Routes/App.routes.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_routes_app_routes_jsx",
+      "_tgt": "frontend_src_app_features_auth_pages_register_jsx",
+      "source": "frontend_src_app_features_auth_pages_register_jsx",
+      "target": "frontend_src_app_routes_app_routes_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_services_auth_api_js",
+      "_tgt": "services_auth_api_api",
+      "source": "frontend_src_app_features_auth_services_auth_api_js",
+      "target": "services_auth_api_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_services_auth_api_js",
+      "_tgt": "services_auth_api_registeruser",
+      "source": "frontend_src_app_features_auth_services_auth_api_js",
+      "target": "services_auth_api_registeruser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_services_auth_api_js",
+      "_tgt": "services_auth_api_loginuser",
+      "source": "frontend_src_app_features_auth_services_auth_api_js",
+      "target": "services_auth_api_loginuser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_services_auth_api_js",
+      "_tgt": "services_auth_api_getme",
+      "source": "frontend_src_app_features_auth_services_auth_api_js",
+      "target": "services_auth_api_getme"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/auth/services/auth.api.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_auth_services_auth_api_js",
+      "_tgt": "services_auth_api_logoutuser",
+      "source": "frontend_src_app_features_auth_services_auth_api_js",
+      "target": "services_auth_api_logoutuser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/components/ChatInterface.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_components_chatinterface_jsx",
+      "_tgt": "components_chatinterface_chatinterface",
+      "source": "frontend_src_app_features_chat_components_chatinterface_jsx",
+      "target": "components_chatinterface_chatinterface"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "_tgt": "frontend_src_app_features_chat_components_chatinterface_jsx",
+      "source": "frontend_src_app_features_chat_components_chatinterface_jsx",
+      "target": "frontend_src_app_features_chat_pages_dashboard_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/components/Sidebar.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_components_sidebar_jsx",
+      "_tgt": "frontend_src_app_redux_reducers_auth_slice_js",
+      "source": "frontend_src_app_features_chat_components_sidebar_jsx",
+      "target": "frontend_src_app_redux_reducers_auth_slice_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/components/Sidebar.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_components_sidebar_jsx",
+      "_tgt": "components_sidebar_sidebar",
+      "source": "frontend_src_app_features_chat_components_sidebar_jsx",
+      "target": "components_sidebar_sidebar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "_tgt": "frontend_src_app_features_chat_components_sidebar_jsx",
+      "source": "frontend_src_app_features_chat_components_sidebar_jsx",
+      "target": "frontend_src_app_features_chat_pages_dashboard_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "frontend_src_app_features_chat_services_chat_socket_js",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "frontend_src_app_features_chat_services_chat_socket_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "services_chat_socket_initializesocketconnection",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "services_chat_socket_initializesocketconnection"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "frontend_src_app_features_chat_services_chat_api_js",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "frontend_src_app_features_chat_services_chat_api_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "services_chat_api_sendmessage",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "services_chat_api_sendmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "services_chat_api_deletechat",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "services_chat_api_deletechat"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "services_chat_api_getchatmessages",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "services_chat_api_getchatmessages"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "services_chat_api_getchats",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "services_chat_api_getchats"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "frontend_src_app_redux_reducers_chat_slice_js",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "frontend_src_app_redux_reducers_chat_slice_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/hooks/useChat.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_hooks_usechat_js",
+      "_tgt": "hooks_usechat_usechat",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "hooks_usechat_usechat"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "_tgt": "frontend_src_app_features_chat_hooks_usechat_js",
+      "source": "frontend_src_app_features_chat_hooks_usechat_js",
+      "target": "frontend_src_app_features_chat_pages_dashboard_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "_tgt": "hooks_usechat_usechat",
+      "source": "hooks_usechat_usechat",
+      "target": "frontend_src_app_features_chat_pages_dashboard_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "pages_dashboard_dashboard",
+      "_tgt": "hooks_usechat_usechat",
+      "source": "hooks_usechat_usechat",
+      "target": "pages_dashboard_dashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/pages/Dashboard.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "_tgt": "pages_dashboard_dashboard",
+      "source": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "target": "pages_dashboard_dashboard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Routes/App.routes.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_app_routes_app_routes_jsx",
+      "_tgt": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "source": "frontend_src_app_features_chat_pages_dashboard_jsx",
+      "target": "frontend_src_app_routes_app_routes_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_services_chat_api_js",
+      "_tgt": "services_chat_api_api",
+      "source": "frontend_src_app_features_chat_services_chat_api_js",
+      "target": "services_chat_api_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_services_chat_api_js",
+      "_tgt": "services_chat_api_sendmessage",
+      "source": "frontend_src_app_features_chat_services_chat_api_js",
+      "target": "services_chat_api_sendmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_services_chat_api_js",
+      "_tgt": "services_chat_api_getchats",
+      "source": "frontend_src_app_features_chat_services_chat_api_js",
+      "target": "services_chat_api_getchats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_services_chat_api_js",
+      "_tgt": "services_chat_api_getchatmessages",
+      "source": "frontend_src_app_features_chat_services_chat_api_js",
+      "target": "services_chat_api_getchatmessages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/services/chat.api.js",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_services_chat_api_js",
+      "_tgt": "services_chat_api_deletechat",
+      "source": "frontend_src_app_features_chat_services_chat_api_js",
+      "target": "services_chat_api_deletechat"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/features/chat/services/chat.socket.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_features_chat_services_chat_socket_js",
+      "_tgt": "services_chat_socket_initializesocketconnection",
+      "source": "frontend_src_app_features_chat_services_chat_socket_js",
+      "target": "services_chat_socket_initializesocketconnection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Redux/reducers/auth.slice.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_redux_reducers_auth_slice_js",
+      "_tgt": "reducers_auth_slice_authslice",
+      "source": "frontend_src_app_redux_reducers_auth_slice_js",
+      "target": "reducers_auth_slice_authslice"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Redux/store/app.store.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_src": "frontend_src_app_redux_store_app_store_js",
+      "_tgt": "frontend_src_app_redux_reducers_auth_slice_js",
+      "source": "frontend_src_app_redux_reducers_auth_slice_js",
+      "target": "frontend_src_app_redux_store_app_store_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Redux/reducers/chat.slice.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_redux_reducers_chat_slice_js",
+      "_tgt": "reducers_chat_slice_chatslice",
+      "source": "frontend_src_app_redux_reducers_chat_slice_js",
+      "target": "reducers_chat_slice_chatslice"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Redux/store/app.store.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "frontend_src_app_redux_store_app_store_js",
+      "_tgt": "frontend_src_app_redux_reducers_chat_slice_js",
+      "source": "frontend_src_app_redux_reducers_chat_slice_js",
+      "target": "frontend_src_app_redux_store_app_store_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Redux/store/app.store.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "frontend_src_app_redux_store_app_store_js",
+      "_tgt": "store_app_store_store",
+      "source": "frontend_src_app_redux_store_app_store_js",
+      "target": "store_app_store_store"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/app/Routes/App.routes.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "frontend_src_app_routes_app_routes_jsx",
+      "_tgt": "routes_app_routes_router",
+      "source": "frontend_src_app_routes_app_routes_jsx",
+      "target": "routes_app_routes_router"
+    },
+    {
+      "relation": "initializes",
+      "confidence": "EXTRACTED",
+      "_src": "server_entry",
+      "_tgt": "express_app",
+      "source": "server_entry",
+      "target": "express_app"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "_src": "server_entry",
+      "_tgt": "mongodb_connection",
+      "source": "server_entry",
+      "target": "mongodb_connection"
+    },
+    {
+      "relation": "initializes",
+      "confidence": "EXTRACTED",
+      "_src": "server_entry",
+      "_tgt": "socket_server",
+      "source": "server_entry",
+      "target": "socket_server"
+    },
+    {
+      "relation": "registers route handler",
+      "confidence": "EXTRACTED",
+      "_src": "express_app",
+      "_tgt": "auth_routes",
+      "source": "express_app",
+      "target": "auth_routes"
+    },
+    {
+      "relation": "registers route handler",
+      "confidence": "EXTRACTED",
+      "_src": "express_app",
+      "_tgt": "chat_routes",
+      "source": "express_app",
+      "target": "chat_routes"
+    },
+    {
+      "relation": "enables",
+      "confidence": "INFERRED",
+      "_src": "mongodb_connection",
+      "_tgt": "user_model",
+      "source": "mongodb_connection",
+      "target": "user_model"
+    },
+    {
+      "relation": "enables",
+      "confidence": "INFERRED",
+      "_src": "mongodb_connection",
+      "_tgt": "chat_model",
+      "source": "mongodb_connection",
+      "target": "chat_model"
+    },
+    {
+      "relation": "enables",
+      "confidence": "INFERRED",
+      "_src": "mongodb_connection",
+      "_tgt": "message_model",
+      "source": "mongodb_connection",
+      "target": "message_model"
+    },
+    {
+      "relation": "routes to",
+      "confidence": "EXTRACTED",
+      "_src": "auth_routes",
+      "_tgt": "auth_controller",
+      "source": "auth_controller",
+      "target": "auth_routes"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "_src": "auth_controller",
+      "_tgt": "user_model",
+      "source": "auth_controller",
+      "target": "user_model"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "_src": "auth_controller",
+      "_tgt": "mail_service",
+      "source": "auth_controller",
+      "target": "mail_service"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "auth_controller",
+      "_tgt": "jwt_lib",
+      "source": "auth_controller",
+      "target": "jwt_lib"
+    },
+    {
+      "relation": "routes to",
+      "confidence": "EXTRACTED",
+      "_src": "chat_routes",
+      "_tgt": "chat_controller",
+      "source": "chat_controller",
+      "target": "chat_routes"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "_src": "chat_controller",
+      "_tgt": "chat_model",
+      "source": "chat_controller",
+      "target": "chat_model"
+    },
+    {
+      "relation": "queries",
+      "confidence": "EXTRACTED",
+      "_src": "chat_controller",
+      "_tgt": "message_model",
+      "source": "chat_controller",
+      "target": "message_model"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "_src": "chat_controller",
+      "_tgt": "ai_service",
+      "source": "chat_controller",
+      "target": "ai_service"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "auth_routes",
+      "_tgt": "auth_middleware",
+      "source": "auth_middleware",
+      "target": "auth_routes"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "chat_routes",
+      "_tgt": "auth_middleware",
+      "source": "auth_middleware",
+      "target": "chat_routes"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "auth_middleware",
+      "_tgt": "jwt_lib",
+      "source": "auth_middleware",
+      "target": "jwt_lib"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "user_model",
+      "_tgt": "bcrypt_lib",
+      "source": "user_model",
+      "target": "bcrypt_lib"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "_src": "chat_model",
+      "_tgt": "user_model",
+      "source": "user_model",
+      "target": "chat_model"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "_src": "message_model",
+      "_tgt": "chat_model",
+      "source": "chat_model",
+      "target": "message_model"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "ai_service",
+      "_tgt": "ai_models",
+      "source": "ai_service",
+      "target": "ai_models"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "_src": "ai_service",
+      "_tgt": "ai_system_message",
+      "source": "ai_service",
+      "target": "ai_system_message"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "ai_models",
+      "_tgt": "langchain_groq",
+      "source": "ai_models",
+      "target": "langchain_groq"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "_src": "mail_service",
+      "_tgt": "account_login_template",
+      "source": "mail_service",
+      "target": "account_login_template"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "_src": "socket_server",
+      "_tgt": "socket_io_lib",
+      "source": "socket_server",
+      "target": "socket_io_lib"
+    }
+  ]
+}
