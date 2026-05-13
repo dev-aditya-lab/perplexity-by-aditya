@@ -1,0 +1,44 @@
+{
+  "files": {
+    "code": [
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\eslint.config.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\tailwind.config.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\vite.config.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\main.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\App.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\components\\Loading.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\components\\AuthProtected.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\components\\AuthShell.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\components\\FormGroup.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\components\\GithubAuthBtn.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\components\\GoogleAuthBtn.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\hook\\useAuth.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\pages\\Login.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\pages\\Register.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\auth\\services\\auth.api.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\chat\\components\\ChatInterface.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\chat\\components\\Sidebar.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\chat\\hooks\\useChat.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\chat\\pages\\Dashboard.jsx",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\chat\\services\\chat.api.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\features\\chat\\services\\chat.socket.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\Redux\\reducers\\auth.slice.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\Redux\\reducers\\chat.slice.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\Redux\\store\\app.store.js",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\src\\app\\Routes\\App.routes.jsx"
+    ],
+    "document": [
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\index.html",
+      "C:\\Users\\ad112\\aadiWorkspace\\Coding\\sharyians Cohort 2.0\\perplexity\\frontend\\README.md"
+    ],
+    "paper": [],
+    "image": [],
+    "video": []
+  },
+  "total_files": 27,
+  "total_words": 6499,
+  "needs_graph": false,
+  "warning": "Corpus is ~6,499 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 0
+}
